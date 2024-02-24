@@ -30,11 +30,14 @@ sound.play()
         else if (yright < 450) {
             sound.rate(0.5)
         }
+        document.getElementById("quedecepcion").innerHTML="vel. = "+sound.rate()+"x"
     }
     if (confidenceleft > 0.2 ) {
         volumen = 1 - (yleft / 450)
         sound.setVolume(volumen)
+        document.getElementById("quegratitud").innerHTML= "vol. = "+volumen+"x"
     }
+
 }
 
 function net(k) {
@@ -43,8 +46,7 @@ function net(k) {
         yright = k[0].pose.rightWrist.y
         confidenceleft = k[0].pose.leftWrist.confidence
         confidenceright = k[0].pose.rightWrist.confidence
-        console.log("yleft"+yleft)
-        
+        console.log("yleft"+yleft) 
     }
 }
 
